@@ -188,7 +188,6 @@ export class ItemCanceled extends Entity {
 
     this.set("seller", Value.fromBytes(Bytes.empty()));
     this.set("nftAddress", Value.fromBytes(Bytes.empty()));
-    this.set("tokenId", Value.fromBigInt(BigInt.zero()));
   }
 
   save(): void {
@@ -234,13 +233,21 @@ export class ItemCanceled extends Entity {
     this.set("nftAddress", Value.fromBytes(value));
   }
 
-  get tokenId(): BigInt {
+  get tokenId(): BigInt | null {
     let value = this.get("tokenId");
-    return value!.toBigInt();
+    if (!value || value.kind == ValueKind.NULL) {
+      return null;
+    } else {
+      return value.toBigInt();
+    }
   }
 
-  set tokenId(value: BigInt) {
-    this.set("tokenId", Value.fromBigInt(value));
+  set tokenId(value: BigInt | null) {
+    if (!value) {
+      this.unset("tokenId");
+    } else {
+      this.set("tokenId", Value.fromBigInt(<BigInt>value));
+    }
   }
 }
 
@@ -306,8 +313,8 @@ export class ItemBought extends Entity {
     this.set("tokenId", Value.fromBigInt(value));
   }
 
-  get price(): BigInt | null {
-    let value = this.get("price");
+  get proce(): BigInt | null {
+    let value = this.get("proce");
     if (!value || value.kind == ValueKind.NULL) {
       return null;
     } else {
@@ -315,11 +322,11 @@ export class ItemBought extends Entity {
     }
   }
 
-  set price(value: BigInt | null) {
+  set proce(value: BigInt | null) {
     if (!value) {
-      this.unset("price");
+      this.unset("proce");
     } else {
-      this.set("price", Value.fromBigInt(<BigInt>value));
+      this.set("proce", Value.fromBigInt(<BigInt>value));
     }
   }
 }

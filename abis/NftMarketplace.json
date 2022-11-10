@@ -4,37 +4,46 @@
       { "internalType": "address", "name": "nftAddress", "type": "address" },
       { "internalType": "uint256", "name": "tokenId", "type": "uint256" }
     ],
-    "name": "AlreadyListed",
+    "name": "NftMarketplace__AlreadyListed",
     "type": "error"
   },
-  { "inputs": [], "name": "NoProceeds", "type": "error" },
-  { "inputs": [], "name": "NotApprovedForMarketplace", "type": "error" },
+  { "inputs": [], "name": "NftMarketplace__NoProceeds", "type": "error" },
+  {
+    "inputs": [],
+    "name": "NftMarketplace__NotApprovedForMarketplace",
+    "type": "error"
+  },
   {
     "inputs": [
       { "internalType": "address", "name": "nftAddress", "type": "address" },
       { "internalType": "uint256", "name": "tokenId", "type": "uint256" }
     ],
-    "name": "NotListed",
+    "name": "NftMarketplace__NotListed",
     "type": "error"
   },
-  { "inputs": [], "name": "NotOwner", "type": "error" },
-  { "inputs": [], "name": "PriceMustBeAboveZero", "type": "error" },
+  { "inputs": [], "name": "NftMarketplace__NotOwner", "type": "error" },
+  {
+    "inputs": [],
+    "name": "NftMarketplace__PriceMustBeAboveZerop",
+    "type": "error"
+  },
   {
     "inputs": [
       { "internalType": "address", "name": "nftAddress", "type": "address" },
       { "internalType": "uint256", "name": "tokenId", "type": "uint256" },
       { "internalType": "uint256", "name": "price", "type": "uint256" }
     ],
-    "name": "PriceNotMet",
+    "name": "NftMarketplace__PriceNotMet",
     "type": "error"
   },
+  { "inputs": [], "name": "NftMarketplace__TransferFailed", "type": "error" },
   {
     "anonymous": false,
     "inputs": [
       {
         "indexed": true,
         "internalType": "address",
-        "name": "buyer",
+        "name": "seller",
         "type": "address"
       },
       {
@@ -65,7 +74,7 @@
       {
         "indexed": true,
         "internalType": "address",
-        "name": "seller",
+        "name": "buyer",
         "type": "address"
       },
       {

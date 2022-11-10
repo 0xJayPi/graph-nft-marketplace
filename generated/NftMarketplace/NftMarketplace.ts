@@ -23,7 +23,7 @@ export class ItemBought__Params {
     this._event = event;
   }
 
-  get buyer(): Address {
+  get seller(): Address {
     return this._event.parameters[0].value.toAddress();
   }
 
@@ -53,7 +53,7 @@ export class ItemCanceled__Params {
     this._event = event;
   }
 
-  get seller(): Address {
+  get buyer(): Address {
     return this._event.parameters[0].value.toAddress();
   }
 

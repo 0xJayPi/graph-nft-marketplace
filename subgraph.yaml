@@ -1,4 +1,4 @@
-specVersion: 0.0.2
+specVersion: 0.0.4
 schema:
   file: ./schema.graphql
 dataSources:
@@ -6,12 +6,12 @@ dataSources:
     name: NftMarketplace
     network: goerli
     source:
-      address: "0x495cd12d23c4CEdfbefB112cdd08cd9f654D95C1"
+      address: "0xB8C48Ee38e7eDd6EEBa8581383b77E66c08ef58c"
       abi: NftMarketplace
-      startBlock: 10526140
+      startBlock: 7927692 # I can get this from etherscan, create contract tx: (Block - 1)
     mapping:
       kind: ethereum/events
-      apiVersion: 0.0.5
+      apiVersion: 0.0.6
       language: wasm/assemblyscript
       entities:
         - ItemBought
